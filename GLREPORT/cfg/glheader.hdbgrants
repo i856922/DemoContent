@@ -1,0 +1,18 @@
+{
+  "hdi_GLHEADER": {
+    "object_owner": {
+      "schema_roles" : [
+        {
+          "roles" : [ "GLHEAD_Access#"]
+        }
+      ]
+    },
+    "application_user": {
+      "schema_roles" : [
+        {
+          "roles" : [ "GLHEAD_Access"]
+        }
+      ]
+    }
+  }
+}

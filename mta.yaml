@@ -1,0 +1,42 @@
+ID: GLPROJECT2
+_schema-version: '2.1'
+version: 0.0.1
+modules:
+  - name: GLREPORT
+    type: hdb
+    path: GLREPORT
+    requires:
+      - name: hdi_GLREPORT
+        properties:
+          TARGET_CONTAINER: '~{hdi-container-name}'
+      - name: cross-container-service-1
+        group: SERVICE_REPLACEMENTS
+        properties:
+          key: ServiceName_1
+          service: '~{the-service-name}'
+      - name: cross-container-service-2
+        group: SERVICE_REPLACEMENTS
+        properties:
+          key: ServiceName_2
+          service: '~{the-service-name}'
+  
+resources:
+  - name: hdi_GLREPORT
+    parameters:
+      config:
+        schema: GLREP
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: cross-container-service-1
+    parameters:
+      service-name: hdi_GLHEADER
+    properties:
+      the-service-name: '${service-name}'
+    type: org.cloudfoundry.existing-service
+  - name: cross-container-service-2
+    parameters:
+      service-name: SFLIGHT_UPS
+    properties:
+      the-service-name: '${service-name}'
+    type: org.cloudfoundry.existing-service

@@ -1,0 +1,16 @@
+{
+  "S_CVAIRPORT": {
+    "target": {
+      "object": "CV_AIRPORT",
+      "schema": "GLHEAD",
+      "database": "HDB"
+    }
+  },
+  "S_CVSCARR": {
+    "target": {
+      "object": "CV_SCARR",
+      "schema": "GLHEAD",
+      "database": "HDB"
+    }
+  }
+}
